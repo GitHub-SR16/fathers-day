@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Father's Day</title>
+<style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./images/father\'s_day_2.jpeg");
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+    }
+    
+    .card {
+        width: 400px;
+        background-color: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        border-radius: 20px;
+        overflow: hidden;
+        padding: 30px;
+        text-align: center;
+        animation: slide-in 0.5s ease-out forwards;
+        position: relative;
+        top: -100px; /* Adjust to move the card up or down */
+    }
+  
+    .card h1 {
+      color: #333333;
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+  
+    .message {
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+      color: #555555;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease-out;
+    }
+  
+    .message:hover {
+      transform: scale(1.1);
+    }
+  
+    .button {
+      display: inline-block;
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px 24px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 1.2rem;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+  
+    .button:hover {
+      background-color: #45a049;
+      transform: scale(1.05);
+    }
+  
+    .floating-images {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+  
+    .floating-images img {
+      position: absolute;
+      width: 200px;
+      height: auto; 
+      animation: float 15s infinite linear;
+    }
+  
+    @keyframes float {
+      0% {
+        transform: translateY(0) rotate(0deg);
+      }
+      50% {
+        transform: translateY(-50vh) rotate(180deg);
+      }
+      100% {
+        transform: translateY(0) rotate(360deg);
+      }
+    }
+  
+    @keyframes slide-in {
+      from {
+        transform: translateY(-100%);
+      }
+      to {
+        transform: translateY(0);
+      }
+    }
+</style>
+</head>
+<body>
+<div class="card">
+  <h1>Happy Father's Day!</h1>
+  <div class="message" id="message">Thank you for always being there.</div>
+  <button class="button" onclick="changeMessage()">Change Message</button>
+</div>
+
+<div class="floating-images">
+  <img src="./images/father's_day_1.jpeg" style="left: 6%; top: 30%; animation-delay: 2s;">
+  <img src="./images/father's_day_3.jpeg" style="left: 6%; top: 50%; animation-delay: 4s;">
+  <img src="./images/father's_day_4.jpeg" style="left: 20%; top: 30%; animation-delay: 6s;">
+  <img src="./images/father's_day_5.jpeg" style="left: 66%; top: 30%; animation-delay: 6s;">
+  <img src="./images/father's_day_6.jpeg" style="left: 80%; top: 30%; animation-delay: 2s;">
+  <img src="./images/father's_day_7.jpeg" style="left: 80%; top: 50%; animation-delay: 4s;">
+</div>
+
+<script>
+  function changeMessage() {
+    var messages = [
+      "You're my hero, Dad!",
+      "Your wisdom and guidance mean everything to me.",
+      "Every day with you is a gift.",
+      "I'm grateful for all the memories we've made together.",
+      "Happy Father's Day to the greatest dad in the world!"
+    ];
+    var message = document.getElementById('message');
+    var randomIndex = Math.floor(Math.random() * messages.length);
+    message.textContent = messages[randomIndex];
+  }
+</script>
+</body>
+</html>
